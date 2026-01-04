@@ -1,9 +1,7 @@
 import streamlit as st
 
-st.title("我的第一個 Streamlit 小工具")
-st.write("Hello Streamlit 👋")
+st.title("Streamlit 小工具")
+todo=st.text_input("輸入待辦事項:")
 
-name = st.text_input("請輸入你的名字")
-
-if name:
-    st.success(f"你好，{name}！")
+if st.button("新增")：
+    st.write("新增事項:",todo)
