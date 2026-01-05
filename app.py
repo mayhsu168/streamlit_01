@@ -9,9 +9,9 @@ todo=st.text_input("輸入待辦事項:")
 
 if st.button("新增"):
     if todo:
-        st.session_state.append(todo)
+        st.session_state.todos.append(todo)
 
 st.write("待辦清單:")
-for i,item in enumerate(st.session_state,start=1):
+for i,item in enumerate(st.session_state.todos,start=1):
     st.write(f"{i}.{item}")
 
