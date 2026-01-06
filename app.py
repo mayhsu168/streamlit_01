@@ -22,9 +22,6 @@ st.write("狀態:",check)
 name=st.text_input("輸入名字:")
 st.write("名字:",name)
 
-check=st.checkbox("同意")
-st.write("狀態:",check)
-
 fruit=st.selectbox(
     "你喜歡的水果:",
     ["蘋果","香蕉","草莓","芒果"]
