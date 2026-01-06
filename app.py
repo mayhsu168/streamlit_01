@@ -17,8 +17,7 @@ for i,item in enumerate(st.session_state.todos,start=1):
 
 
 check=st.checkbox("同意")
-st.write(f"狀態: {check}")
-import streamlit as st
+st.write("狀態:",check)
 
 name=st.text_input("輸入名字:")
 st.write("名字:",name)
