@@ -42,7 +42,7 @@ message=st.text_area("請輸入意見:")
 st.write("你的意見:")
 st.write(message)
 
-age=(
+age=st.number_input(
     "請輸入年齡:",
     min_value=0,
     max_value=120,
