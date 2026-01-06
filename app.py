@@ -15,3 +15,8 @@ st.write("待辦清單:")
 for i,item in enumerate(st.session_state.todos,start=1):
     st.write(f"{i}.{item}")
 
+
+check=st.checkbox("同意")
+st.write(f"狀態: {check}")
+
+
