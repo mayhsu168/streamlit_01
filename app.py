@@ -16,8 +16,6 @@ for i,item in enumerate(st.session_state.todos,start=1):
     st.write(f"{i}.{item}")
 
 
-dic={}
-
 if "save_data" not in st.session_state:
     st.session_state.save_date=[]
 
@@ -30,13 +28,15 @@ fruit=st.selectbox("fruit",["apple","banana","orange"])
 message=st.text_area("message")
 
 if st.button("submit"):
-    dic["aggre"]=aggre
-    dic["name"]=name
-    dic["gender"]=gender
-    dic["age"]=age
-    dic["birthday"]=birthday
-    dic["fruit"]=fruit
-    dic["message"]=message
+    dic={
+        "aggre":aggre,
+        "name":name,
+        "gender":gender,
+        "age":age,
+        "birthday":birthday,
+        "fruit"=fruit,
+        "message":message
+    }  
     st.session_state.save_date.append(dic)
 
 st.write(st.session_state.save_date)
