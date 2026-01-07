@@ -18,7 +18,7 @@ st.text_input("name",key="name")
 st.radio("grender",["man","feman"],key="grender")
 st.number_input("age",min_value=0,max_value=120,step=1,key="age")
 st.date_input("birthday",key="birthday")
-st.selectbox("fruit",["apple","banana","orange",key="fruit"])
+st.selectbox("fruit",["apple","banana","orange"],key="fruit")
 st.text_area("message",key="message")
 st.checkbox("agree",key="agree")
 
