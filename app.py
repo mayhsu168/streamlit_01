@@ -39,7 +39,7 @@ if st.button("submit"):
     }  
     st.session_state.save_data.append(dic)
 
-st.write(st.session_state.save_date)
+st.write(st.session_state.save_data)
 
 
 
