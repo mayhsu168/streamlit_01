@@ -18,7 +18,7 @@ for i,item in enumerate(st.session_state.todos,start=1):
 
 dic={}
 
-if "save_data" not in session_state:
+if "save_data" not in st.session_state:
     st.session_state.save_date=[]
 
 aggre=st.checkbox("agree")
