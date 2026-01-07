@@ -17,7 +17,7 @@ for i,item in enumerate(st.session_state.todos,start=1):
 
 
 if "save_data" not in st.session_state:
-    st.session_state.save_date=[]
+    st.session_state.save_data=[]
 
 aggre=st.checkbox("agree")
 name=st.text_input("name")
