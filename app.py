@@ -1,46 +1,47 @@
 import streamlit as st
 
-st.title("Streamlit 小工具(list版)")
-
-if "todos" not in st.session_state:
-    st.session_state.todos=[]
-    
-todo=st.text_input("輸入待辦事項:")
-
-if st.button("新增"):
-    if todo:
-        st.session_state.todos.append(todo)
-
-st.write("待辦清單:")
-for i,item in enumerate(st.session_state.todos,start=1):
-    st.write(f"{i}.{item}")
-
+st.title("資料送出清空")
 
 if "save_data" not in st.session_state:
     st.session_state.save_data=[]
 
-aggre=st.checkbox("agree")
-name=st.text_input("name")
-gender=st.radio("gender",["man","feman"])
-age=st.number_input("age",min_value=0,max_value=120,step=1)
-birthday=st.date_input("birday")
-fruit=st.selectbox("fruit",["apple","banana","orange"])
-message=st.text_area("message")
+if "name" not in st.session_state:
+    st.session_state.name=""
+    st.session_state.grender="man"
+    st.session_state.age=0
+    st.session_state.birthday=None
+    st.session_state.fruit="apple"
+    st.session_state.message=""
+    st.session_state.aggre=False
+
+st.text_input("name",key="name")
+st.radio("grender",["man","feman"],key="grender")
+st.number_input("age",min_value=0,max_value=120,step=1,key="age")
+st.date_input("birthday",key="birthday")
+st.selectbox("fruit",["apple","banana","orange",key="fruit"])
+st.text_area("message",key="message")
+st.checkbox("agree",key="agree")
 
 if st.button("submit"):
     dic={
-        "aggre":aggre,
-        "name":name,
-        "gender":gender,
-        "age":age,
-        "birthday":birthday,
-        "fruit":fruit,
-        "message":message
-    }  
+        "name":st.session_state.name,
+        "gender":st.session_state.grender,
+        "age":st.session_state.age,
+        "birthday":st.session_state.birthday,
+        "fruit":st.session_state.fruit,
+        "message":st.session_state.message,
+        "agree":st.session_state.agree
+    }
+
     st.session_state.save_data.append(dic)
 
+    st.session_state.name=""
+    st.session_state.grender="man"
+    st.session_state.age=0
+    st.session_state.birthday=None
+    st.session_state.fruit="apple"
+    st.session_state.message=""
+    st.session_state.aggre=False
+
 st.write(st.session_state.save_data)
-
-
-
-
+   
