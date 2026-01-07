@@ -34,7 +34,7 @@ if st.button("submit"):
         "gender":gender,
         "age":age,
         "birthday":birthday,
-        "fruit"=fruit,
+        "fruit":fruit,
         "message":message
     }  
     st.session_state.save_date.append(dic)
