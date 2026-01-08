@@ -13,8 +13,9 @@ with st.form("aform",clear_on_submit=True):
     fruit=st.selectbox("fruit",["apple","banana","orange"])
     agree=st.checkbox("agree",value=False)
     message=st.text_area("message")
+    sub=st.form_submit_button("submit")
 
-if st.form_submit_button("submit"):
+if sub:
     dic={
         "name":name,
         "grender":grender,
