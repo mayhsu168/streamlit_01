@@ -41,7 +41,7 @@ for i,item in enumerate(st.session_state.save_data):
     c1,c2,c3=st.columns([1,5,1])
 
     with c1:
-        st.werite(i+1)
+        st.write(i+1)
 
     with c2:
         st.write(item)
