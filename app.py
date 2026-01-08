@@ -28,4 +28,4 @@ if sub:
 
     st.session_state.save_data.append(dic)
 
-st.write(st.session_state.save_data)
+st.dataframe(st.session_state.save_data)
