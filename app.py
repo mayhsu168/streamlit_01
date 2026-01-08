@@ -32,5 +32,25 @@ display_data=[]
 for i,item in enumerate(st.session_state.save_data,start=1):
     row=item.copy()
     row["編號"]=i
+    row["刪除鍵"]=
     display_data.append(row)
 st.dataframe(display_data)
+
+st.subheader("資料列表")
+
+for i,item in enumerate(st.session_state.save_data):
+    c1,c2,c3=st.columns([1,5,1])
+
+    with c1:
+        st.werite(i+1)
+
+    with c2:
+        st.write(item)
+
+    with c3:
+        if st.button("刪除",key=f"del_{i}"):
+            st.session_state.save_data.pop.(i)
+            sr.rerun()
+
+
+        
