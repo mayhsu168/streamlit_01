@@ -32,7 +32,6 @@ display_data=[]
 for i,item in enumerate(st.session_state.save_data,start=1):
     row=item.copy()
     row["編號"]=i
-    row["刪除鍵"]=
     display_data.append(row)
 st.dataframe(display_data)
 
