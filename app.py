@@ -49,7 +49,7 @@ for i,item in enumerate(st.session_state.save_data):
     with c3:
         if st.button("刪除",key=f"del_{i}"):
             st.session_state.save_data.pop(i)
-            sr.rerun()
+            st.rerun()
 
 
         
