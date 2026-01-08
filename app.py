@@ -26,6 +26,11 @@ if sub:
         "agree":agree
     }
 
-    st.session_state.save_data.append(dic)
+    st.session_state.save_data.insert(0,dic)
 
-st.dataframe(0,st.session_state.save_data)
+display_data=[]
+for i,item in enumerate(st.session_state.save_data,start=1):
+    row=item.copy()
+    row["編號"]=i
+    display_data.append(row)
+st.dataframe(display_data)
