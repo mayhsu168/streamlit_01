@@ -14,7 +14,7 @@ with st.form("aform",clear_on_submit=True):
     agree=st.checkbox("agree",value=False)
     message=st.text_area("message")
 
-if st.button("submit"):
+if st.form_submit_button("submit"):
     dic={
         "name":name,
         "grender":grender,
