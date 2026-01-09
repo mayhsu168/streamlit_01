@@ -54,7 +54,8 @@ for i,item in enumerate(st.session_state.save_data):
             st.session_state.save_data.pop(i)
             st.rerun()
 
-
+if "save_data" not in st.session_state:
+    st.sesion_state.save_data=[]
 def save_to_file():
     with open("data.json","w",encoding="utf-8") as f:
         json.dump(st.session_state.save_data,f,ensure_ascii=False,indent=2)
