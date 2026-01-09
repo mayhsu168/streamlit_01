@@ -53,9 +53,11 @@ for i,item in enumerate(st.session_state.save_data):
         if st.button("刪除",key=f"del_{i}"):
             st.session_state.save_data.pop(i)
             st.rerun()
+
+
 def save_to_file():
-    with open("data.json","w",encoding="udf-8") as f:
-        jaon.dump(session_state.save_data,f,ensure_ascii=False,indent=2)
+    with open("data.json","w",encoding="utf-8") as f:
+        json.dump(st.session_state.save_data,f,ensure_ascii=False,indent=2)
 
 if st.button("save"):
     save_to_file()
