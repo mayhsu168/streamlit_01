@@ -1,4 +1,7 @@
 import streamlit as st
+import os
+import json
+
 
 st.title("資料送出後清空資料")
 
@@ -50,6 +53,14 @@ for i,item in enumerate(st.session_state.save_data):
         if st.button("刪除",key=f"del_{i}"):
             st.session_state.save_data.pop(i)
             st.rerun()
+def save_to_file():
+    with open("data.json","w",encoding="udf-8") as f:
+        jaon.dump(session_state.save_data,f,ensure_ascii=False,indent=2)
+
+if st.button("save"):
+    save_to_file()
+
+
 
 
         
