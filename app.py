@@ -63,6 +63,7 @@ def save_to_file():
 
 if st.button("save"):
     save_to_file()
+    st.write("資料已儲存")
 
 def show_file():
     if os.path.exists("data.json"):   
