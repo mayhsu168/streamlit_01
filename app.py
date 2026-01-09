@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import json
+import datetime
 
 
 st.title("資料送出後清空資料")
@@ -23,7 +24,7 @@ if sub:
         "name":name,
         "grender":grender,
         "age":age,
-        "birthday":birthday,
+        "birthday":birthday.isoformat() if birthday else None,
         "fruit":fruit,
         "message":message,
         "agree":agree
@@ -55,7 +56,7 @@ for i,item in enumerate(st.session_state.save_data):
             st.rerun()
 
 if "save_data" not in st.session_state:
-    st.sesion_state.save_data=[]
+    st.session_state.save_data=[]
 def save_to_file():
     with open("data.json","w",encoding="utf-8") as f:
         json.dump(st.session_state.save_data,f,ensure_ascii=False,indent=2)
