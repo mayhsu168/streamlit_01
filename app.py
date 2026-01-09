@@ -60,7 +60,14 @@ def save_to_file():
 if st.button("save"):
     save_to_file()
 
+def show_file():
+    if os.path.exists("data.json"):   
+        with open("data.json","r",encoding="utf-8") as f:
+            return json.load(f)
+    return []
 
+if st.button("show"):
+    st.write(show_file())
 
 
         
